@@ -81,6 +81,7 @@ def main():
 
         with conn.cursor() as cur:
             cur.execute(f"SET search_path TO {SCHEMA};")
+            cur.execute("TRUNCATE TABLE transactions, meteo, customer_region, articles, customers RESTART IDENTITY CASCADE;")
             cur.execute("DROP TABLE IF EXISTS stg_customers;")
             cur.execute("DROP TABLE IF EXISTS stg_articles;")
             cur.execute("DROP TABLE IF EXISTS stg_transactions;")

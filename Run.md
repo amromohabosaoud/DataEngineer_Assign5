@@ -1,6 +1,12 @@
 run the requirment file
 pip install -r requirements.txt
 
+first create DATABASE
+psql -h localhost -p 5433 -U postgres
+CREATE DATABASE dwh;
+\l
+\q
+
 1- Create Schema and Tables
 psql -h localhost -p 5433 -U postgres -d dwh -f query_script/create_db.sql
 
